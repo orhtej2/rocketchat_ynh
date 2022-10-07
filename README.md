@@ -28,7 +28,6 @@ Rocket.Chat is an open-source fully customizable communications platform develop
 
 **Shipped version:** 5.1.4~ynh1
 
-
 **Demo:** https://cloud.rocket.chat/trial
 
 ## Screenshots
