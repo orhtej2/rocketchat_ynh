@@ -13,6 +13,15 @@ Environment=PATH=__ENV_PATH__
 ExecStart=__YNH_NODE__ __FINALPATH__/main.js
 SyslogIdentifier=__APP__
 
+Environment=PORT:__PORT__
+
+Environment=ROOT_URL:https://__DOMAIN____PATH__
+
+Environment=MONGO_URL:mongodb://localhost:27017/__APP__?replicaSet=rs01
+Environment=MONGO_OPLOG_URL:mongodb://localhost:27017/local?replicaSet=rs01
+
+
+
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these 
 # .. but this should be a good baseline
