@@ -95,6 +95,13 @@ ynh_script_progression --message="Building $app... (this will take some time and
 pushd $install_dir/programs/server
 	ynh_use_nodejs
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn install --unsafe-perm
+
+	if [[ $(cat /proc/cpuinfo) != *"sse4"* ]]; then
+		ynh_secure_remove --file npm/node_modules/sharp/build/Release/sharp-linux-x64.node
+		mv npm/node_modules/sharp/build/Release/sharp-linux-x64.node.no-sse4 npm/node_modules/sharp/build/Release/sharp-linux-x64.node
+	else
+		ynh_secure_remove --file npm/node_modules/sharp/build/Release/sharp-linux-x64.node.no-sse4
+	fi
 popd
 
 #=================================================
