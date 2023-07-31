@@ -40,6 +40,9 @@ if [ -d "/tmp/ufs" ]; then
 	ynh_secure_remove --file="/tmp/ufs"
 fi
 
+# Remove the log files
+ynh_secure_remove --file="/var/log/$app"
+
 # Remove the dedicated NGINX config
 ynh_remove_nginx_config
 
